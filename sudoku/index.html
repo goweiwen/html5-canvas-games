@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta charset="UTF-8"/>
+	<title>Sudoku</title>
+	<script src="lib/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+	<script src="src/constants.js"></script>
+	<script src="src/sudoku.js"></script>
+	<select id="difficulty">
+		<option>select difficulty</option>
+		<option>easier</option>
+		<option>easy</option>
+		<option>medium</option>
+		<option>hard</option>
+		<option>harder</option>
+		<option>even harder</option>
+		<option>impossible</option>
+	</select>
+	<div id="sudoku">
+	</div>
+	<span id="timer"></span>
+	<script>
+		$('#difficulty').change(function() {
+                        var difficulty = this.value;
+			var $this = $(this)
+			$this.after("<span id='alert'>wait ah i think of puzzle...</span>");
+			$this.remove();
+			
+			var game;
+      			var interval = setInterval(function() {
+			switch (difficulty) {
+				case "select difficulty":
+					break;
+				case "easier":
+					game = new Game($('#sudoku'), 40);
+					break;
+				case "easy":
+					game = new Game($('#sudoku'), 35);
+					break;
+				case "medium":
+					game = new Game($('#sudoku'), 30);
+					break;
+				case "hard":
+					game = new Game($('#sudoku'), 25);
+					break;
+				case "harder":
+					game = new Game($('#sudoku'), 24);
+					break;
+				case "even harder":
+					game = new Game($('#sudoku'), 23);
+					break;
+				case "impossible":
+					game = new Game($('#sudoku'), 80);
+					break;
+			};
+			$("#alert").remove();
+			clearInterval(interval);
+			}, 200);
+		
+			
+			var $timer = $("#timer");
+			var seconds = 0;
+			
+		
+				
+			function formatTime(seconds) {
+				var minutes = Math.floor(seconds/60);
+				var hours = Math.floor(minutes/60);
+
+				seconds = ("00" + (seconds % 60));
+				seconds = seconds.slice(seconds.length-2);
+
+				minutes = ("00" + (minutes % 60));
+				minutes = minutes.slice(minutes.length-2);
+
+				hours = ("00" + (hours % 60));
+				hours = hours.slice(hours.length-2);
+
+				return hours + ":" + minutes + ":" + seconds;
+			};
+		
+			var timer = setInterval(function() { 
+				if (!game.board.solved) {
+					$timer.text(formatTime(++seconds));
+				} else {
+					clearInterval(timer);
+				}
+			}, 1000);
+		
+		
+		});
+	</script>
+</body>

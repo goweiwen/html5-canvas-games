@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8"/>
+	<title>Tetris</title>
+	<script src="lib/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+	<select id="gamemode">
+		<option>select mode</option>
+		<option>SURVIVAL</option>
+		<option>SPRINT</option>
+		<option>ULTRA</option>
+		<option>GARBAGE</option>
+		<option>UNLIMITED</option>
+		<option>20G</option>
+		<option>PHANTOM</option>
+	</select>
+	<script src="src/tetris.js" type="text/javascript"></script>
+	<script>
+	var game;
+	$("#gamemode").change(function() {
+		MODE = this.value;
+		if (game == null) {
+			game = new Game($('#tetris'));
+		}
+		$(this).remove();
+	});
+	$("html").keydown(function(e) {
+		var MODES = ["UNLIMITED", "SPRINT", "ULTRA", "SURVIVAL", "20G", "GARBAGE", "PHANTOM"]
+		var gamemode = parseInt(e.key);
+		if (game == null && !isNaN(gamemode)) {
+			MODE = MODES[gamemode-1]
+			game = new Game($('#tetris'));
+			$("#gamemode").remove();
+		}
+	});
+	</script>
+	<div id="tetris">
+	</div>
+</body>

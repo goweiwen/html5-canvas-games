@@ -1,0 +1,99 @@
+#chess {
+  font-family: monospace;
+  font-weight: 400;
+  font-size: 36pt;
+}
+
+#chess {
+  float: left;
+  border-collapse: collapse;
+  border: 2px solid #bbb;
+  background-color: #bbb;
+}
+
+#chess tr > td {
+  background-color: #ADD8E6;
+  width: 60px;
+  height: 60px;
+
+  text-align: center;
+}
+
+#chess tr:nth-child(2n+1) > td:nth-child(2n),
+#chess tr:nth-child(2n) > td:nth-child(2n+1) {
+  background-color: #c68e17;
+}
+
+#chess tr > td > p {
+  padding: 0;
+  margin: -6px 0 0 -6px;
+}
+
+#chess tr > td > p.white {
+  color: #fff;
+  text-shadow:
+    -1px -1px 0 #000,
+    -1px  0px 0 #000,
+     0px -1px 0 #000,
+     1px  1px 0 #000,
+     1px  0px 0 #000,
+     0px  1px 0 #000;
+  filter:
+    progid:DXImageTransform.Microsoft.Glow(Color=#000000, Strength=3);
+}
+
+#chess tr > td > p.black {
+  color: #000;
+  text-shadow:
+    -1px -1px 0 #000,
+    -1px  0px 0 #000,
+     0px -1px 0 #000,
+     0px  0px 0 #000;
+  zoom: 1;
+  filter:
+    progid:DXImageTransform.Microsoft.Glow(Color=#ffffff, Strength=3);
+}
+
+#chess tr > td.legal {
+  background-color: #080;
+}
+
+#chess tr:nth-child(2n+1) > td:nth-child(2n).legal,
+#chess tr:nth-child(2n) > td:nth-child(2n+1).legal {
+  background-color: #8f8;
+}
+
+#chess tr > td:hover() {
+  background-color: #880;
+}
+
+#chess tr:nth-child(2n+1) > td:nth-child(2n):hover(),
+#chess tr:nth-child(2n) > td:nth-child(2n+1):hover() {
+  background-color: #ff8;
+}
+
+#chess tr > td.selected {
+  background-color: #800;
+}
+
+#chess tr:nth-child(2n+1) > td:nth-child(2n).selected,
+#chess tr:nth-child(2n) > td:nth-child(2n+1).selected {
+  background-color: #f88;
+}
+
+#sidebar {
+  float: left;
+}
+
+#eaten {
+  margin-bottom: 2em;
+  height: 3em;
+}
+
+#eaten > span {
+  display: block;
+}
+
+#history > span {
+  display: block;
+}

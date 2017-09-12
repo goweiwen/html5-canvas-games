@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta charset="UTF-8"/>
+	<title>Chess</title>
+	<script src="lib/jquery.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+	<script src="src/constants.js"></script>
+	<script src="src/chess.js"></script>
+	<div>
+		<table id="chess">
+			<tr>
+				<td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td>
+			</tr>
+			<tr>
+				<td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td>
+			</tr>
+			<tr>
+				<td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td>
+			</tr>
+			<tr>
+				<td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td>
+			</tr>
+			<tr>
+				<td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td>
+			</tr>
+			<tr>
+				<td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td>
+			</tr>
+			<tr>
+				<td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td>
+			</tr>
+			<tr>
+				<td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td><td><p></p></td>
+			</tr>
+		</table>
+		<div id="sidebar">
+			<div id="eaten">
+				<span class="black"></span>
+				<span class="white"></span>
+			</div>
+			<pre id="history"></pre>
+		</div>
+	</div>
+	<script>
+		$(function() { game = new Game($('#chess > tbody')); });
+	</script>
+</body>

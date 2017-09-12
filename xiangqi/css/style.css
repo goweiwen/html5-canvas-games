@@ -1,0 +1,77 @@
+﻿* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(255, 242, 192);
+  transition: background-color 200ms;
+  overflow: none;
+}
+
+.xiangqi {
+  transition: transform 0ms 500ms;
+  transform-origin: 180px 250px;
+}
+
+.xiangqi.black, .xiangqi.black .piece {
+  transform: rotate(180deg);
+}
+
+.xiangqi .board, .xiangqi .overlay, .xiangqi .pieces {
+  position: absolute;
+  top: 50px;
+}
+
+.xiangqi .piece {
+  position: absolute;
+}
+
+.xiangqi .board {
+}
+
+.xiangqi .piece {
+  font-weight: bold;
+  background-color: rgb(255, 212, 128);
+  border: 2px solid black;
+  border-radius: 30px;
+  width: 28px;
+  height: 28px;
+  line-height: 30px;
+  text-align: center;
+  position: absolute;
+  transition: top 300ms, left 300ms, transform 0ms 500ms, opacity 1000ms;
+  transform-origin: 16px 16px;
+}
+
+.xiangqi .piece.red {
+  border-color: red;
+  color: red;
+}
+
+.xiangqi .piece.black {
+  color: black;
+}
+
+.xiangqi .piece.dead {
+}
+
+.xiangqi .piece.selected {
+  border-width: 5px;
+}
+
+.xiangqi .piece.general.black:before { content: "將"; }
+.xiangqi .piece.advisor.black:before { content: "士"; }
+.xiangqi .piece.elephant.black:before { content: "象"; }
+.xiangqi .piece.horse.black:before { content: "馬"; }
+.xiangqi .piece.chariot.black:before { content: "車"; }
+.xiangqi .piece.cannon.black:before { content: "砲"; }
+.xiangqi .piece.soldier.black:before { content: "卒"; }
+
+.xiangqi .piece.general.red:before { content: "帥"; }
+.xiangqi .piece.advisor.red:before { content: "仕"; }
+.xiangqi .piece.elephant.red:before { content: "相"; }
+.xiangqi .piece.horse.red:before { content: "傌"; }
+.xiangqi .piece.chariot.red:before { content: "俥"; }
+.xiangqi .piece.cannon.red:before { content: "炮"; }
+.xiangqi .piece.soldier.red:before { content: "兵"; }

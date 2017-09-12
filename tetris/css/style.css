@@ -1,0 +1,101 @@
+body {
+  font-family: monospace;
+  font-size: 9pt;
+}
+
+#tetris table {
+  border: none;
+  background-color: #bbb;
+  border-collapse: collapse;
+}
+
+#tetris > .grid, #tetris > .nextPieceQueue, #tetris > .hold, #tetris > .stats {
+  float: left;
+}
+
+#tetris > .hold {
+  margin-right: 10px;
+}
+
+#tetris > .stats {
+  margin-left: 10px;
+}
+
+#tetris > .stats > span {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#tetris > .nextPieceQueue {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+#tetris.paused table {
+  background-color: #888;
+}
+
+#tetris.paused > .grid:before {
+}
+
+#tetris td {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+#tetris td {}
+
+#tetris td.I { background-color: #0FF; }
+#tetris td.J { background-color: #00F; }
+#tetris td.L { background-color: #F80; }
+#tetris td.O { background-color: #FF0; }
+#tetris td.S { background-color: #0F0; }
+#tetris td.Z { background-color: #F00; }
+#tetris td.T { background-color: #F0F; }
+#tetris td.G { background-color: #444; }
+
+/*
+#tetris td {
+  margin: 0 0;
+  border: 1px solid transparent;
+}
+
+#tetris td.I,
+#tetris td.J,
+#tetris td.L,
+#tetris td.O,
+#tetris td.S,
+#tetris td.Z,
+#tetris td.T,
+#tetris td.G { border: 1px solid black !important; }
+*/
+
+#tetris td.I.ghost { background-color: #488; }
+#tetris td.J.ghost { background-color: #448; }
+#tetris td.L.ghost { background-color: #864; }
+#tetris td.O.ghost { background-color: #884; }
+#tetris td.S.ghost { background-color: #484; }
+#tetris td.Z.ghost { background-color: #844; }
+#tetris td.T.ghost { background-color: #848; }
+
+/*
+#tetris td.I.locked { background-color: #088; }
+#tetris td.J.locked { background-color: #008; }
+#tetris td.L.locked { background-color: #840; }
+#tetris td.O.locked { background-color: #880; }
+#tetris td.S.locked { background-color: #080; }
+#tetris td.Z.locked { background-color: #800; }
+#tetris td.T.locked { background-color: #808; }
+#tetris td.G.locked { background-color: #444; }
+*/
+
+#tetris td.locked.invisible { background: transparent; }
+
+#gamemode {
+  display: block;
+  margin-bottom: 20px;
+}

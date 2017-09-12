@@ -1,0 +1,65 @@
+#sudoku {
+}
+
+#sudoku input {
+  font-family: monospace;
+  font-size: 24pt;
+  width: 32px;
+  height: 32px;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  border: 1px solid lightgrey;
+  border-left: none;
+  border-top: none;
+  text-align: center;
+}
+
+#sudoku input.locked {
+  font-weight: bold;
+  color: #000;
+  background-color: #ddd;
+}
+
+#sudoku input.illegal {
+  background-color: #fdd;
+}
+
+#sudoku input.illegal.locked {
+  background-color: #fbb;
+}
+
+#sudoku input:nth-child(9n+1) {
+  clear: both;
+}
+
+#sudoku input:nth-child(-n+9) {
+  border-top: 1px solid black;
+}
+
+#sudoku input:nth-child(9n+1) {
+  border-left: 1px solid black;
+}
+
+#sudoku input:nth-child(3n) {
+  border-right: 1px solid black;
+}
+
+#sudoku input:nth-child(27n),
+#sudoku input:nth-child(27n-1),
+#sudoku input:nth-child(27n-2),
+#sudoku input:nth-child(27n-3),
+#sudoku input:nth-child(27n-4),
+#sudoku input:nth-child(27n-5),
+#sudoku input:nth-child(27n-6),
+#sudoku input:nth-child(27n-7),
+#sudoku input:nth-child(27n-8) {
+  border-bottom: 1px solid black;
+}
+
+#timer {
+  font-family: Brush Script MT;
+  font-size: 64px;
+  margin-left: 20px;
+}
